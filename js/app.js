@@ -11,7 +11,10 @@ function eventListeners() {
 }
 
 function loadMessages() {
-  showMessages();
+     if(localStorage.getItem('messages') === null) {
+	localStorage.setItem('messages', '[]')
+  } 
+	showMessages();
 }
 
 function addMessage(e) {
@@ -26,6 +29,7 @@ function addMessage(e) {
   formMessage.reset();
 
   // Get messages of local storage
+  messages = JSON.parse(localStorage.getItem('messages'))
   messages = [...messages, { id: Date.now(), message }];
 
   syncStorage();

@@ -54,7 +54,7 @@ main
 		padding-inline-start: 50px
 		font-size: 3rem
 		color: $green
-		border-inline-start: 1px solid $borders 
+		border-inline-start: 1px solid $borders
 		&.error
 			color: $red
 
@@ -150,3 +150,25 @@ main
 			color: $red
 		&:active
 			color: $dark-red
+
+@media (max-width: 750px)
+  .header__container
+      display: block;
+      inline-size: 100%;
+
+  .header__logo,.header__title
+      padding: 0
+      border: none
+
+  .header__title
+      margin-block-start: 20px
+
+  .section-messages
+      display: block
+
+  .new-messages,.my-messages
+      justify-content: center
+
+  .new-messages__container,.my-messages__container
+      margin-block-end: 20px
+
